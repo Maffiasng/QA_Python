@@ -1,4 +1,4 @@
-from src.Figure import Figure
+from src.figure import Figure
 
 class Triangle(Figure):
      def __init__(self, side_c: int | float,side_a: int | float,side_b: int | float):
