@@ -8,19 +8,19 @@ class User():
         self.result_data = []
 
 
-    def pars_json(self,filename):
+    def pars_json(self, filename):
         with open(filename, 'r') as user:
             reader = json.load(user)
             for usr in reader:
-                self.users.append({"name":usr["name"],"gender":usr["gender"],"address":usr["address"],"age":usr["age"]})
+                self.users.append({"name": usr["name"], "gender": usr["gender"], "address": usr["address"], "age": usr["age"]})
             return self.users
 
 
-    def pars_scv(self,filename):
+    def pars_scv(self, filename):
         with open(filename, 'r', newline='') as book:
             reader = csv.DictReader(book)
             for row in reader:
-                self.books.append({"title":row["Title"],"author":row["Author"],"pages":int(row["Pages"]),"gender":row["Genre"]})
+                self.books.append({"title": row["Title"], "author": row["Author"], "pages": int(row["Pages"]), "gender": row["Genre"]})
             return self.books
 
 
@@ -53,6 +53,6 @@ class User():
 
 
 x = User()
-c = x.pars_json('Путь до файла ')
+c = x.pars_json('Путь до файла')
 d = x.pars_scv('Путь до файла')
 print(x.update_users())
